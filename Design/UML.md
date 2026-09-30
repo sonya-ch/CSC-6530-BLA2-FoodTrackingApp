@@ -10,7 +10,7 @@ classDiagram
         - int protein
         - int carbs
         - int fat
-        -------------------------
+ 
         + create()
         + read()
         + update()
