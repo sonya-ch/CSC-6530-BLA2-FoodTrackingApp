@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Project: MyFavoriteFoodApp [BLA 1]
 # Name: Saranya Chotsiri
 # Course: CSC-6530-1 | Mobile Application Design and Development I
@@ -16,6 +17,33 @@ I will focus on creating a clean and user-friendly interface before adding more 
 -	Home Page – Food Menu header, search bar, food categories, and food cards.
 -	Food Detail (Future Plan) – Food image, food category, calories, protein, and other details.
 -	Favorite Page – Users can add or remove foods from their favorites list, also show total calories from selected food.
+=======
+# Project: Food Tracking App [BLA 2]
+# Name: Saranya Chotsiri
+# Course: CSC-6530-1 | Mobile Application Design and Development I
+# Instructor: Dr Victor Govindaswamy
+# Start Date: 9/29/2026
+
+
+## BLA 2 Plan – CRUD and Local Data
+For BLA 2, I plan to expand the Food Menu concept into a Food Tracking App.
+
+### The application will introduce CRUD functionality, including:
+- Add a food/meal
+- View food details
+- Edit food information
+- Delete a food/meal
+- Manage food data locally using SQLite
+
+---
+### The main screens will include:
+-	Home Page – Food Menu header, search bar, food categories, and food cards.
+-	Favorite Page – Users can add or remove foods from their favorites list, also show total calories from selected food.
+-	View Food Detail – Food image, food category, calories, protein, and other details.
+-	Add new food Page
+-	Edit Food Page
+-	Delete Food Pop Up
+>>>>>>> 536da0d281bce7da68a5d86b302671053c509c12
 
 ### Design 
 - Logo
@@ -24,13 +52,22 @@ I will focus on creating a clean and user-friendly interface before adding more 
 - Food Cards
 - Food Detail
 - Food search
+<<<<<<< HEAD
+=======
+- Add new food Page
+-	Edit Food Page
+>>>>>>> 536da0d281bce7da68a5d86b302671053c509c12
 
 ### Food Detail (Future Plan)
 - Food Name
 - Food Image
 - Calories
 - Nutrition
+<<<<<<< HEAD
 - Description
+=======
+ 
+>>>>>>> 536da0d281bce7da68a5d86b302671053c509c12
 
 ### Interaction 
 - Pressable / TouchableOpacity
@@ -39,12 +76,20 @@ I will focus on creating a clean and user-friendly interface before adding more 
 - Favorite/unfavorite
 - Category selection
 - FlatList
+<<<<<<< HEAD
+=======
+- Pop Up
+>>>>>>> 536da0d281bce7da68a5d86b302671053c509c12
  
 ## Technologies
 - React Native
 - TypeScript
 - Android Emulator
 - Expo Go
+<<<<<<< HEAD
+=======
+- SQLite
+>>>>>>> 536da0d281bce7da68a5d86b302671053c509c12
 
 ## How to Run
 - npm install (Install Packages)
@@ -52,6 +97,7 @@ I will focus on creating a clean and user-friendly interface before adding more 
 - npx expo start -c (Start Expo and clear cache)
 
 ### What I Have Learned? (Challenges)
+<<<<<<< HEAD
 
 📝 One of the hardest things for me was understanding how data is passed between different files in React Native.<br>
 I was confused about how to connect my food data into other files.<br>
@@ -127,3 +173,5 @@ I will use this tutorial to study how to implement delete functionality for meal
 I will combine the relevant concepts from these resources and implement them in my own Food Menu and Food Tracking applications rather than directly reproducing the tutorials.
 
 ---
+=======
+>>>>>>> 536da0d281bce7da68a5d86b302671053c509c12
