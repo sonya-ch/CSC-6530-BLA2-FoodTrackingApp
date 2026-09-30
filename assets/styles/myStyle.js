@@ -191,6 +191,97 @@ category: {
     color: "#777",
     fontSize: 16,
   },
+
+
+
+// =========================
+// Food Detail Page
+// =========================
+
+foodDetailImage: {
+  width: "100%",
+  height: 280,
+  borderRadius: 20,
+  marginBottom: 20,
+},
+
+foodDetailContent: {
+  padding: 20,
+},
+
+foodDetailName: {
+  fontSize: 28,
+  fontWeight: "bold",
+  marginBottom: 8,
+},
+
+foodDetailCategory: {
+  fontSize: 16,
+  marginBottom: 10,
+},
+
+foodDetailCalories: {
+  fontSize: 20,
+  fontWeight: "bold",
+  marginBottom: 20,
+},
+
+backButton: {
+  padding: 15,
+},
+
+backButtonText: {
+  fontSize: 18,
+  fontWeight: "bold",
+},
+
+nutritionBox: {
+  flexDirection: "row",
+  justifyContent: "space-around",
+  padding: 20,
+  marginBottom: 25,
+  borderRadius: 15,
+},
+
+nutritionItem: {
+  alignItems: "center",
+},
+
+nutritionValue: {
+  fontSize: 20,
+  fontWeight: "bold",
+},
+
+nutritionLabel: {
+  fontSize: 14,
+  marginTop: 5,
+},
+
+editButton: {
+  padding: 15,
+  borderRadius: 10,
+  marginBottom: 10,
+  alignItems: "center",
+},
+
+editButtonText: {
+  fontSize: 17,
+  fontWeight: "bold",
+},
+
+deleteButton: {
+  padding: 15,
+  borderRadius: 10,
+  alignItems: "center",
+},
+
+deleteButtonText: {
+  fontSize: 17,
+  fontWeight: "bold",
+},
+
+
+
 });
 
 export default myStyle;
