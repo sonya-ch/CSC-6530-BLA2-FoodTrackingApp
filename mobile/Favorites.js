@@ -8,7 +8,7 @@ import {
 
 import myStyle from "../assets/styles/myStyle";
 
-export default function Favorites({favorites, setFavorites,}) 
+export default function Favorites({favorites, setFavorites, openFoodDetail}) 
 {
   //Remove function
   const removeFavorite = (id) => {
@@ -24,39 +24,33 @@ export default function Favorites({favorites, setFavorites,})
     0
   );
 
-
   //Food Cards Details
   const renderFavorite = ({ item }) => {
     return (
       <View style={myStyle.fav}>
         <View style={myStyle.foodCard}>
-          <Image
-            source={{ uri: item.image }}
-            style={myStyle.foodImage}
-          />
-
+        {/* Food Card - click to Food Detail */}
+        <TouchableOpacity onPress={() => openFoodDetail(item)}>
+          <Image source={{ uri: item.image }} style={myStyle.foodImage} />
           <View style={myStyle.foodInfo}>
-            <Text style={myStyle.foodName}>
-              {item.name}
-            </Text>
-
-            <Text style={myStyle.calories}>
-              {item.calories} kcal
-            </Text>
-
+            <Text style={myStyle.foodName}> {item.name} </Text>
+            <Text style={myStyle.calories}> {item.calories} kcal </Text>
+          </View>
+        </TouchableOpacity>
+ 
+          {/* Favorite Button */}
             <TouchableOpacity
-              style={myStyle.favoriteButton}
-              onPress={() => removeFavorite(item.id)}
-            >
+                  style={myStyle.favoriteButton}
+                  onPress={() => removeFavorite(item.id)}
+                >
               <Text style={myStyle.favoriteText}>
                 💔 Remove Favorite
               </Text>
             </TouchableOpacity>
-          </View>
         </View>
       </View>
-    );
-  };
+    ); //return food card
+  }; //renderFood()
 
   //return favorites screen
   return (

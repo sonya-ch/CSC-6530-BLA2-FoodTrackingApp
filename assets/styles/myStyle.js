@@ -92,27 +92,7 @@ menuIcon: {
     borderWidth: 1,
     borderColor: "#E8CBD3",
   },
-/*
-  categoryContainer: {
-    flexDirection: "row",
-    paddingHorizontal: 20,
-    marginBottom: 10,
-  },
 
-  category: {
-    backgroundColor: "#FFFFFF",
-    paddingVertical: 8,
-    paddingHorizontal: 16,
-    borderRadius: 20,
-    marginRight: 8,
-    borderWidth: 1,
-    borderColor: "#E8CBD3",
-  },
-
-  categoryText: {
-    color: "#6B3E4B",
-  },
-*/
   menuHeader: {
   flexDirection: "row",
   alignItems: "center",
@@ -198,36 +178,53 @@ category: {
 // Food Detail Page
 // =========================
 
+foodDetailImageContainer: {
+  alignItems: "center",
+},
+
 foodDetailImage: {
-  width: "100%",
-  height: 280,
+  width: "80%",
+  height: 250,
   borderRadius: 20,
-  marginBottom: 20,
+  marginBottom: 10,
 },
 
 foodDetailContent: {
   padding: 20,
+
+},
+
+foodContent: {
+  padding: 10,
+  borderColor: "black",
+  borderRadius: 30,
+  backgroundColor: 'pink',
+  borderWidth: 5,
 },
 
 foodDetailName: {
-  fontSize: 28,
+  fontSize: 26,
   fontWeight: "bold",
   marginBottom: 8,
+    marginLeft: 20,
 },
 
 foodDetailCategory: {
   fontSize: 16,
   marginBottom: 10,
+  marginLeft: 20,
 },
 
 foodDetailCalories: {
   fontSize: 20,
   fontWeight: "bold",
   marginBottom: 20,
+  marginLeft: 20, 
 },
 
 backButton: {
   padding: 15,
+  marginTop: 15,
 },
 
 backButtonText: {
@@ -236,11 +233,12 @@ backButtonText: {
 },
 
 nutritionBox: {
+  backgroundColor: "#e5efeb",
   flexDirection: "row",
   justifyContent: "space-around",
   padding: 20,
   marginBottom: 25,
-  borderRadius: 15,
+  borderRadius: 30,
 },
 
 nutritionItem: {
@@ -258,6 +256,7 @@ nutritionLabel: {
 },
 
 editButton: {
+  backgroundColor: "#dde5f8",
   padding: 15,
   borderRadius: 10,
   marginBottom: 10,
@@ -270,6 +269,7 @@ editButtonText: {
 },
 
 deleteButton: {
+  backgroundColor: "#F5ccd5",
   padding: 15,
   borderRadius: 10,
   alignItems: "center",

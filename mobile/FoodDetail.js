@@ -23,9 +23,9 @@ export default function FoodDetail({ food, onBack }) {
   }
 
   return (
-    <ScrollView style={styles.container}>
-      
-      {/* Back Button */}
+    <View style={styles.container}>
+
+       {/* Back Button */}
       <TouchableOpacity
         style={styles.backButton}
         onPress={onBack}
@@ -33,11 +33,15 @@ export default function FoodDetail({ food, onBack }) {
         <Text style={styles.backButtonText}>← Back</Text>
       </TouchableOpacity>
 
+
+    <ScrollView style={styles.container}>
       {/* Food Image */}
-      <Image
-        source={{ uri: food.image }}
-        style={styles.foodDetailImage}
-      />
+      <View style={styles.foodDetailImageContainer}>
+        <Image
+            source={{ uri: food.image }}
+            style={styles.foodDetailImage}
+        />
+      </View>
 
       {/* Food Information */}
       <View style={styles.foodDetailContent}>
@@ -92,17 +96,18 @@ export default function FoodDetail({ food, onBack }) {
         {/* BLA2 CRUD buttons - temporarily */}
         <TouchableOpacity style={styles.editButton}>
           <Text style={styles.editButtonText}>
-            Edit Food
+            Edit Food ✍️
           </Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.deleteButton}>
           <Text style={styles.deleteButtonText}>
-            Delete Food
+            🗑️ Delete Food
           </Text>
         </TouchableOpacity>
 
       </View>
     </ScrollView>
+    </View>
   );
 }

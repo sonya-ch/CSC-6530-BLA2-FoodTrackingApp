@@ -14,7 +14,7 @@ import foodData from "../data/food";
 import myStyle from "../assets/styles/myStyle";
 
 //props favorites, setFavorites, onFoodPress
-export default function Home({ favorites, setFavorites, onFoodPress }) {
+export default function Home({ favorites, setFavorites, openFoodDetail }) {
   //state search = waiting for search input.
   // -- useState is a React hook that allows you to have state variables in functional components
   const [search, setSearch] = useState("");
@@ -54,27 +54,27 @@ export default function Home({ favorites, setFavorites, onFoodPress }) {
 
     //return food card
     return (
-       <View style={myStyle.foodCard}>
-        <TouchableOpacity onPress={() => onFoodPress(item)}>
+      <View style={myStyle.foodCard}>
+ 
+        {/* Food Card - click to Food Detail */}
+        <TouchableOpacity onPress={() => openFoodDetail(item)}>
           <Image source={{ uri: item.image }} style={myStyle.foodImage} />
-
           <View style={myStyle.foodInfo}>
-            <Text style={myStyle.foodName}>{item.name}</Text>
-
-            <Text style={myStyle.calories}>{item.calories} kcal</Text>
-
-            {/* Argument = data sent to the function (item) */}
-            <TouchableOpacity
-              style={myStyle.favoriteButton}
-              onPress={() => toggleFavorite(item)}
-            >
-              <Text style={myStyle.favoriteText}>
-                {isFavorite ? "💔 Remove Favorite" : "❤️ Add Favorite"}
-              </Text>
-            </TouchableOpacity>
+            <Text style={myStyle.foodName}> {item.name} </Text>
+            <Text style={myStyle.calories}> {item.calories} kcal </Text>
           </View>
-
         </TouchableOpacity>
+
+        {/* Favorite Button */}
+        <TouchableOpacity
+          style={myStyle.favoriteButton}
+          onPress={() => toggleFavorite(item)}
+        >
+          <Text style={myStyle.favoriteText}>
+            {isFavorite ? "💔 Remove Favorite" : "❤️ Add Favorite"}
+          </Text>
+        </TouchableOpacity>
+
       </View>
     ); //return food card
   }; //renderFood()

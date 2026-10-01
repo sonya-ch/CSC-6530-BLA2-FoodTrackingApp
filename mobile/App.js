@@ -1,33 +1,26 @@
 //Navigation bar <Home> <Favorites>
 
 import { useState } from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-} from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 
-  // --- Props ---
+// --- Props ---
 import Home from "./Home"; //props Home
 import Favorites from "./Favorites";
 import FoodDetail from "./FoodDetail"; //Food Detail
 
-  // --- Style ---
+// --- Style ---
 import myStyle from "../assets/styles/myStyle.js";
 
-
 export default function App() {
-
   // --- State ---
   //state screen, innitialize to "home"
-  const [screen, setScreen] = useState("home"); 
+  const [screen, setScreen] = useState("home");
 
   //Empty array for favorites food
-  const [favorites, setFavorites] = useState([]); 
+  const [favorites, setFavorites] = useState([]);
 
   // When select food > go to FoodDetail page
   const [selectedFood, setSelectedFood] = useState(null);
-
 
   // --- Functions ---
   // Open Food Detail Page
@@ -41,33 +34,33 @@ export default function App() {
     setScreen("home");
   };
 
-
   return (
-    <View style={{ flex: 1 }}> 
+    <View style={{ flex: 1 }}>
 
-{/* --- Render Screen --- */}
-      {screen === "home" ? ( // if screen is home = show Home screen
+      {/* --- Render Screen --- */}
+      {screen === "home" ? (
         <Home
-          favorites={favorites} // Array favorites, contains the favorite selected 
-          setFavorites={setFavorites}
-          openFoodDetail={openFoodDetail} //Set State function
-        />
-      ) : ( //else show Favorites screen
-        <Favorites
           favorites={favorites}
           setFavorites={setFavorites}
+          openFoodDetail={openFoodDetail}
         />
-      )}
-      
-      {screen === "detail" && (
-        <FoodDetail
-          food={selectedFood}
-          onBack={goBackHome}
+
+      ) : screen === "favorites" ? (
+        <Favorites 
+          favorites={favorites} 
+          setFavorites={setFavorites} 
+          openFoodDetail={openFoodDetail}/>
+
+      ) : screen === "detail" ? (
+        <FoodDetail 
+        food={selectedFood} 
+        onBack={goBackHome} 
+
         />
-      )}
+
+      ) : null}
 
       <View style={myStyle.navbar}>
-
         <TouchableOpacity onPress={() => setScreen("home")}>
           <Text>🏠 Home</Text>
         </TouchableOpacity>
@@ -75,7 +68,6 @@ export default function App() {
         <TouchableOpacity onPress={() => setScreen("favorites")}>
           <Text>❤️ Favorites</Text>
         </TouchableOpacity>
-
       </View>
     </View>
   );
