@@ -73,7 +73,7 @@ export default function AddFood({
             {/* Header */}
             <View style={myStyle.favheader}>
                 <Text style={myStyle.logoText}>
-                {foodToEdit ? "🍳 Edit Food" : "🥘 Add New Food"}
+                    {foodToEdit ? "🍳 Edit Food" : "🥘 Add New Food"}
                 </Text>
             </View>
 
