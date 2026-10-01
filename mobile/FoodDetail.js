@@ -11,8 +11,7 @@ import {
 import styles from "../assets/styles/myStyle";
 
 
-
-export default function FoodDetail({ food, onBack, onDelete }) {
+export default function FoodDetail({ food, onBack, onDelete, onEdit }) {
 
   const handleDelete = () => {
     Alert.alert(
@@ -117,7 +116,9 @@ export default function FoodDetail({ food, onBack, onDelete }) {
 
         {/* BLA2 CRUD buttons - temporarily */}
         <TouchableOpacity 
-            style={styles.editButton} >
+            style={styles.editButton} 
+            onPress={() => onEdit(food)}
+            >
             <Text style={styles.editButtonText}>
                 Edit Food ✍️
             </Text>

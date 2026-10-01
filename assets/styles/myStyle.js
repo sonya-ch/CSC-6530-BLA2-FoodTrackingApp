@@ -82,16 +82,7 @@ const myStyle = StyleSheet.create({
     borderTopColor: "#EEE",
   },
 
-  searchBox: {
-    backgroundColor: "#FFFFFF",
-    marginHorizontal: 20,
-    marginBottom: 15,
-    padding: 12,
-    borderRadius: 12,
-    borderWidth: 1,
-    borderColor: "#E8CBD3",
-  },
-
+  
   menuHeader: {
     flexDirection: "row",
     alignItems: "center",
@@ -283,20 +274,28 @@ const myStyle = StyleSheet.create({
     alignItems: "center",
     marginBottom: 15,
   },
-
+ 
   searchBox: {
     flex: 1,
-    // style เดิมของเธอ
+    backgroundColor: "#FFFFFF",
+    marginHorizontal: 20,
+    marginBottom: 15,
+    padding: 12,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: "#E8CBD3",
   },
 
   addButton: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
+    width: 40,
+    height: 40,
+    borderRadius: 15,
     justifyContent: "center",
     alignItems: "center",
-    marginLeft: 10,
-    backgroundColor: "#000",
+    //marginLeft: 5,
+    backgroundColor: "#4A3037",
+    marginBottom: 15,
+    marginRight: 20,
   },
 
   addButtonText: {
@@ -307,6 +306,11 @@ const myStyle = StyleSheet.create({
 
 
   /*------ Add Food Page ------*/
+
+  foodDetailContainer: {
+    paddingHorizontal: 25,
+  },
+
   formLabel: {
     fontSize: 16,
     fontWeight: "bold",
@@ -333,7 +337,11 @@ const myStyle = StyleSheet.create({
     padding: 10,
     backgroundColor: "#fff",
   },
-  selectedCategory: { marginTop: 10, fontSize: 14, fontWeight: "bold" },
+  selectedCategory: { 
+    marginTop: 10, 
+    fontSize: 14, 
+    fontWeight: "bold" 
+  },
   formButtonRow: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -354,13 +362,16 @@ const myStyle = StyleSheet.create({
     flex: 1,
     padding: 14,
     borderRadius: 10,
-    backgroundColor: "#000",
+    backgroundColor: "#6B3E4B",
     alignItems: "center",
     marginLeft: 5,
   },
-  saveButtonText: { color: "#fff", fontWeight: "bold" },
+  saveButtonText: { 
+    color: "#fff", 
+    fontWeight: "bold" 
+  },
 
-  
+
 });
 
 export default myStyle;

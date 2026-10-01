@@ -30,7 +30,7 @@ export default function App() {
   const [selectedFood, setSelectedFood] = useState(null);
 
 
-  // --- Functions ---
+  // ------- Functions ------
 
   // Open Food Detail Page
   const openFoodDetail = (food) => {
@@ -70,6 +70,30 @@ export default function App() {
   };
 
 
+  // EDIT and UPDATE
+  const openEditFood = (food) => {
+    setSelectedFood(food);
+    setScreen("edit");
+  };
+
+  const updateFood = (updatedFood) => {
+    setFoods((prevFoods) =>
+      prevFoods.map((food) =>
+        food.id === updatedFood.id ? updatedFood : food
+      )
+    );
+
+    // Update favorite item too, if this food is a favorite
+    setFavorites((prevFavorites) =>
+      prevFavorites.map((food) =>
+        food.id === updatedFood.id ? updatedFood : food
+      )
+    );
+
+    setSelectedFood(updatedFood);
+    setScreen("detail");
+  };
+
   return (
     <View style={{ flex: 1 }}>
 
@@ -95,12 +119,20 @@ export default function App() {
          food={selectedFood}
          onBack={goBackHome}
          onDelete={deleteFood} 
+         onEdit={openEditFood}
          />
 
       ) : screen === "add" ? (
         <AddFood 
           onAddFood={addFood} 
           onBack={goBackHome} 
+        />
+
+      ) : screen === "edit" ? (
+        <AddFood
+          foodToEdit={selectedFood}
+          onUpdateFood={updateFood}
+          onBack={() => setScreen("detail")}
         />
 
       ) : null}
