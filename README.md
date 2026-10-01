@@ -25,7 +25,7 @@ For BLA 2, I plan to expand the Food Menu concept into a Food Tracking App.
  
 ### Design 
 - [UML](./docs/design/UML.md) 
-- [UseCaseDiagram](./docs/design/UseCaseDiagram-ByteBurn v2.png) 
+- [UseCaseDiagram](./docs/design/) 
 - Logo
 - Food Categories
 - Favorite button
