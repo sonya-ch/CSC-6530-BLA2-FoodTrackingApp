@@ -51,6 +51,7 @@ export default function App() {
 
   // CREATE - Add New Food
   const addFood = (newFood) => {
+    console.log("ADDING FOOD TO APP:", newFood);
     setFoods((prevFoods) => [...prevFoods, newFood]);
     setScreen("home");
   };

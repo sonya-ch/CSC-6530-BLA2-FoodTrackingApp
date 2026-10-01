@@ -36,6 +36,7 @@ export default function AddFood({ onAddFood, onBack }) {
             fat: Number(fat) || 0,
             category: category,
         };
+        console.log("NEW FOOD:", newFood);
         // Send new food back to App.js
         onAddFood(newFood);
     };
@@ -141,6 +142,7 @@ export default function AddFood({ onAddFood, onBack }) {
                             Cancel
                         </Text>
                     </TouchableOpacity>
+
                     <TouchableOpacity
                         style={myStyle.saveButton}
                         onPress={handleAddFood}>
