@@ -44,6 +44,8 @@ export default function App() {
     setScreen("home");
   };
 
+
+  // ---- CURD -----
   // Open Add Food Page
   const openAddFood = () => {
     setScreen("add");
@@ -55,6 +57,18 @@ export default function App() {
     setFoods((prevFoods) => [...prevFoods, newFood]);
     setScreen("home");
   };
+
+  // DELETE - Delete food
+  const deleteFood = (foodId) => {
+    setFoods((prevFoods) =>
+      prevFoods.filter((food) => food.id !== foodId) 
+    //Keep all foods except the one with the matching ID
+    );
+
+    setSelectedFood(null);
+    setScreen("home");
+  };
+
 
   return (
     <View style={{ flex: 1 }}>
@@ -79,7 +93,8 @@ export default function App() {
       ) : screen === "detail" ? (
         <FoodDetail 
          food={selectedFood}
-         onBack={goBackHome} 
+         onBack={goBackHome}
+         onDelete={deleteFood} 
          />
 
       ) : screen === "add" ? (

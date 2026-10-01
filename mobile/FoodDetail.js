@@ -5,11 +5,33 @@ import {
   Image,
   ScrollView,
   TouchableOpacity,
+  Alert,
 } from "react-native";
 
 import styles from "../assets/styles/myStyle";
 
-export default function FoodDetail({ food, onBack }) {
+
+
+export default function FoodDetail({ food, onBack, onDelete }) {
+
+  const handleDelete = () => {
+    Alert.alert(
+        "⚠️ Delete Food",
+        `Are you sure you want to delete ${food.name}?`,
+        [
+            {
+                text: "Cancel",
+                style: "cancel",
+            },
+            {
+                text: "Delete",
+                style: "destructive",
+                onPress: () => onDelete(food.id),
+            },
+        ]
+    );
+  };
+
   if (!food) {
     return (
       <View style={styles.container}>
@@ -94,16 +116,22 @@ export default function FoodDetail({ food, onBack }) {
         </View>
 
         {/* BLA2 CRUD buttons - temporarily */}
-        <TouchableOpacity style={styles.editButton}>
-          <Text style={styles.editButtonText}>
-            Edit Food ✍️
-          </Text>
+        <TouchableOpacity 
+            style={styles.editButton} >
+            <Text style={styles.editButtonText}>
+                Edit Food ✍️
+            </Text>
+
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.deleteButton}>
+        <TouchableOpacity   
+            style={styles.deleteButton} 
+            onPress={handleDelete}>
+
           <Text style={styles.deleteButtonText}>
             🗑️ Delete Food
           </Text>
+
         </TouchableOpacity>
 
       </View>
