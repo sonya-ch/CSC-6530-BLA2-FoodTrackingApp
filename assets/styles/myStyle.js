@@ -5,49 +5,48 @@ const myStyle = StyleSheet.create({
     flex: 1,
     backgroundColor: "#FFF8FA",
   },
-/*------ Home : Header -------*/
+  /*------ Home : Header -------*/
   header: {
-  height: 60,
-  backgroundColor: "#F8DDE5",
-  flexDirection: "row",
-  alignItems: "center",
-  justifyContent: "center",
-  marginTop: 25,
-},
+    height: 60,
+    backgroundColor: "#F8DDE5",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 25,
+  },
 
-logoImage: {
-  width: 40,
-  height: 40,
-  resizeMode: "contain",
-  marginRight: 60,
-},
+  logoImage: {
+    width: 40,
+    height: 40,
+    resizeMode: "contain",
+    marginRight: 60,
+  },
 
-logoText: {
-  fontSize: 26,
-  fontWeight: "bold",
-  color: "#6B3E4B",
-},
+  logoText: {
+    fontSize: 26,
+    fontWeight: "bold",
+    color: "#6B3E4B",
+  },
 
-menuButton: {
-  marginLeft: 70,
-  padding: 8,
-},
+  menuButton: {
+    marginLeft: 70,
+    padding: 8,
+  },
 
-menuIcon: {
-  fontSize: 30,
-  color: "#6B3E4B",
-  fontWeight: "bold",
-},
+  menuIcon: {
+    fontSize: 30,
+    color: "#6B3E4B",
+    fontWeight: "bold",
+  },
 
-/*---------------------------------- */
+  /*---------------------------------- */
 
   totalCaloriesHeader: {
     fontSize: 18,
     fontWeight: "bold",
-    color: "#6B3E4B"
+    color: "#6B3E4B",
   },
 
-  
   favheader: {
     paddingTop: 30,
     paddingHorizontal: 25,
@@ -75,14 +74,14 @@ menuIcon: {
   },
 
   navbar: {
-          flexDirection: "row",
-          justifyContent: "space-around",
-          padding: 15,
-          backgroundColor: "#FFFFFF",
-          borderTopWidth: 1,
-          borderTopColor: "#EEE",
+    flexDirection: "row",
+    justifyContent: "space-around",
+    padding: 15,
+    backgroundColor: "#FFFFFF",
+    borderTopWidth: 1,
+    borderTopColor: "#EEE",
   },
-  
+
   searchBox: {
     backgroundColor: "#FFFFFF",
     marginHorizontal: 20,
@@ -94,32 +93,32 @@ menuIcon: {
   },
 
   menuHeader: {
-  flexDirection: "row",
-  alignItems: "center",
-  justifyContent: "space-between",
-  marginBottom: 15,
-},
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginBottom: 15,
+  },
 
-menuTitle: {
-  fontSize: 32,
-  fontWeight: "bold",
-  color: "#4B2735",
-},
+  menuTitle: {
+    fontSize: 32,
+    fontWeight: "bold",
+    color: "#4B2735",
+  },
 
-categories: {
-  flexDirection: "row",
-  alignItems: "center",
-  gap: 8,
-  marginEnd: 20,
-},
+  categories: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+    marginEnd: 20,
+  },
 
-category: {
-  fontSize: 14,
-  fontWeight: "600",
-  color: "#6B3E4B",
-},
+  category: {
+    fontSize: 14,
+    fontWeight: "600",
+    color: "#6B3E4B",
+  },
 
-  fav:{
+  fav: {
     marginTop: 15,
   },
 
@@ -172,116 +171,196 @@ category: {
     fontSize: 16,
   },
 
+  // =========================
+  // Food Detail Page
+  // =========================
 
+  foodDetailImageContainer: {
+    alignItems: "center",
+  },
 
-// =========================
-// Food Detail Page
-// =========================
+  foodDetailImage: {
+    width: "80%",
+    height: 250,
+    borderRadius: 20,
+    marginBottom: 10,
+  },
 
-foodDetailImageContainer: {
-  alignItems: "center",
-},
+  foodDetailContent: {
+    padding: 20,
+  },
 
-foodDetailImage: {
-  width: "80%",
-  height: 250,
-  borderRadius: 20,
-  marginBottom: 10,
-},
+  foodContent: {
+    padding: 10,
+    borderColor: "black",
+    borderRadius: 30,
+    backgroundColor: "pink",
+    borderWidth: 5,
+  },
 
-foodDetailContent: {
-  padding: 20,
-
-},
-
-foodContent: {
-  padding: 10,
-  borderColor: "black",
-  borderRadius: 30,
-  backgroundColor: 'pink',
-  borderWidth: 5,
-},
-
-foodDetailName: {
-  fontSize: 26,
-  fontWeight: "bold",
-  marginBottom: 8,
+  foodDetailName: {
+    fontSize: 26,
+    fontWeight: "bold",
+    marginBottom: 8,
     marginLeft: 20,
-},
+  },
 
-foodDetailCategory: {
-  fontSize: 16,
-  marginBottom: 10,
-  marginLeft: 20,
-},
+  foodDetailCategory: {
+    fontSize: 16,
+    marginBottom: 10,
+    marginLeft: 20,
+  },
 
-foodDetailCalories: {
-  fontSize: 20,
-  fontWeight: "bold",
-  marginBottom: 20,
-  marginLeft: 20, 
-},
+  foodDetailCalories: {
+    fontSize: 20,
+    fontWeight: "bold",
+    marginBottom: 20,
+    marginLeft: 20,
+  },
 
-backButton: {
-  padding: 15,
-  marginTop: 15,
-},
+  backButton: {
+    padding: 15,
+    marginTop: 15,
+  },
 
-backButtonText: {
-  fontSize: 18,
-  fontWeight: "bold",
-},
+  backButtonText: {
+    fontSize: 18,
+    fontWeight: "bold",
+  },
 
-nutritionBox: {
-  backgroundColor: "#e5efeb",
-  flexDirection: "row",
-  justifyContent: "space-around",
-  padding: 20,
-  marginBottom: 25,
-  borderRadius: 30,
-},
+  nutritionBox: {
+    backgroundColor: "#e5efeb",
+    flexDirection: "row",
+    justifyContent: "space-around",
+    padding: 20,
+    marginBottom: 25,
+    borderRadius: 30,
+  },
 
-nutritionItem: {
-  alignItems: "center",
-},
+  nutritionItem: {
+    alignItems: "center",
+  },
 
-nutritionValue: {
-  fontSize: 20,
-  fontWeight: "bold",
-},
+  nutritionValue: {
+    fontSize: 20,
+    fontWeight: "bold",
+  },
 
-nutritionLabel: {
-  fontSize: 14,
-  marginTop: 5,
-},
+  nutritionLabel: {
+    fontSize: 14,
+    marginTop: 5,
+  },
 
-editButton: {
-  backgroundColor: "#dde5f8",
-  padding: 15,
-  borderRadius: 10,
-  marginBottom: 10,
-  alignItems: "center",
-},
+  editButton: {
+    backgroundColor: "#dde5f8",
+    padding: 15,
+    borderRadius: 10,
+    marginBottom: 10,
+    alignItems: "center",
+  },
 
-editButtonText: {
-  fontSize: 17,
-  fontWeight: "bold",
-},
+  editButtonText: {
+    fontSize: 17,
+    fontWeight: "bold",
+  },
 
-deleteButton: {
-  backgroundColor: "#F5ccd5",
-  padding: 15,
-  borderRadius: 10,
-  alignItems: "center",
-},
+  deleteButton: {
+    backgroundColor: "#F5ccd5",
+    padding: 15,
+    borderRadius: 10,
+    alignItems: "center",
+  },
 
-deleteButtonText: {
-  fontSize: 17,
-  fontWeight: "bold",
-},
+  deleteButtonText: {
+    fontSize: 17,
+    fontWeight: "bold",
+  },
+
+  /*--- Search AND ADD BUTTON ---*/
+
+  searchRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 15,
+  },
+
+  searchBox: {
+    flex: 1,
+    // style เดิมของเธอ
+  },
+
+  addButton: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    justifyContent: "center",
+    alignItems: "center",
+    marginLeft: 10,
+    backgroundColor: "#000",
+  },
+
+  addButtonText: {
+    fontSize: 30,
+    color: "#fff",
+    lineHeight: 32,
+  },
 
 
+  /*------ Add Food Page ------*/
+  formLabel: {
+    fontSize: 16,
+    fontWeight: "bold",
+    marginTop: 12,
+    marginBottom: 5,
+  },
+  formInput: {
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 10,
+    padding: 12,
+    fontSize: 16,
+    backgroundColor: "#fff",
+  },
+  categoryRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginTop: 5,
+  },
+  categoryButton: {
+    borderWidth: 1,
+    borderColor: "#ccc",
+    borderRadius: 10,
+    padding: 10,
+    backgroundColor: "#fff",
+  },
+  selectedCategory: { marginTop: 10, fontSize: 14, fontWeight: "bold" },
+  formButtonRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginTop: 25,
+    marginBottom: 30,
+  },
+  cancelButton: {
+    flex: 1,
+    padding: 14,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: "#999",
+    alignItems: "center",
+    marginRight: 5,
+  },
+  cancelButtonText: { fontWeight: "bold" },
+  saveButton: {
+    flex: 1,
+    padding: 14,
+    borderRadius: 10,
+    backgroundColor: "#000",
+    alignItems: "center",
+    marginLeft: 5,
+  },
+  saveButtonText: { color: "#fff", fontWeight: "bold" },
 
+  
 });
 
 export default myStyle;

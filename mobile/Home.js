@@ -8,13 +8,11 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-//Food details data
-import foodData from "../data/food";
 
 import myStyle from "../assets/styles/myStyle";
 
 //props favorites, setFavorites, onFoodPress
-export default function Home({ favorites, setFavorites, openFoodDetail }) {
+export default function Home({ foods, favorites, setFavorites, openFoodDetail, openAddFood }) {
   //state search = waiting for search input.
   // -- useState is a React hook that allows you to have state variables in functional components
   const [search, setSearch] = useState("");
@@ -36,7 +34,7 @@ export default function Home({ favorites, setFavorites, openFoodDetail }) {
   };
 
   //Filter food based on category AND search query
-  const filteredFood = foodData.filter((food) => {
+  const filteredFood = foods.filter((food) => {
     //Check category
     const matchCategory =
       selectedCategory === "All" || food.category === selectedCategory;
@@ -55,7 +53,6 @@ export default function Home({ favorites, setFavorites, openFoodDetail }) {
     //return food card
     return (
       <View style={myStyle.foodCard}>
- 
         {/* Food Card - click to Food Detail */}
         <TouchableOpacity onPress={() => openFoodDetail(item)}>
           <Image source={{ uri: item.image }} style={myStyle.foodImage} />
@@ -74,7 +71,6 @@ export default function Home({ favorites, setFavorites, openFoodDetail }) {
             {isFavorite ? "💔 Remove Favorite" : "❤️ Add Favorite"}
           </Text>
         </TouchableOpacity>
-
       </View>
     ); //return food card
   }; //renderFood()
@@ -98,7 +94,6 @@ export default function Home({ favorites, setFavorites, openFoodDetail }) {
           <Text style={myStyle.menuIcon}>☰</Text>
         </TouchableOpacity>
       </View>
-
       {/* Food Menu + Categories */}
       <View style={myStyle.menuHeader}>
         <Text style={myStyle.title}>Food Menu</Text>
@@ -125,16 +120,26 @@ export default function Home({ favorites, setFavorites, openFoodDetail }) {
           </TouchableOpacity>
         </View>
       </View>
-
       <Text style={myStyle.subtitle}>What is your favorite food?</Text>
 
-      {/* Search */}
-      <TextInput
-        style={myStyle.searchBox}
-        placeholder="Search food..."
-        value={search}
-        onChangeText={setSearch}
-      />
+      {/* Search + Add Food */}
+      <View style={myStyle.searchRow}>
+        <TextInput
+          style={myStyle.searchBox}
+          placeholder="Search food..."
+          value={search}
+          onChangeText={setSearch}
+        />
+
+          {/* Add Food Button */}
+        <TouchableOpacity
+          style={myStyle.addButton}
+          //onPress={() => setScreen("add")}
+          onPress={openAddFood}
+        >
+          <Text style={myStyle.addButtonText}> + </Text>
+        </TouchableOpacity>
+      </View>
 
       {/* filteredFood = data from category + search */}
       <FlatList
