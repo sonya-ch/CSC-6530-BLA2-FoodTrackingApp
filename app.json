@@ -16,7 +16,10 @@
       }
     },
     "web": {
-        "icon": "./assets/images/Logo_FoxBit.png"
-    }
+      "icon": "./assets/images/Logo_FoxBit.png"
+    },
+    "plugins": [
+      "expo-sqlite"
+    ]
   }
 }
