@@ -16,6 +16,7 @@ import foodData from "../data/food";
 import myStyle from "../assets/styles/myStyle.js";
 
 export default function App() {
+  
   // --- State ---
   //state Current screen, innitialize to "home"
   const [screen, setScreen] = useState("home");
@@ -65,6 +66,10 @@ export default function App() {
     //Keep all foods except the one with the matching ID
     );
 
+    // Also remove the deleted food from Favorites 
+    setFavorites((prevFavorites) => 
+      prevFavorites.filter((food) => food.id !== foodId) );
+    
     setSelectedFood(null);
     setScreen("home");
   };
