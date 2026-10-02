@@ -26,11 +26,12 @@ export async function initDatabase() {
     CREATE TABLE IF NOT EXISTS foods (
       id INTEGER PRIMARY KEY NOT NULL,
       name TEXT NOT NULL,
-      image TEXT,
+      category TEXT NOT NULL,
       calories INTEGER,
       protein REAL, -- Real is a floating-point type
       carbs REAL,
       fat REAL,
+      image TEXT,
       isFavorite INTEGER DEFAULT 0 -- 1 for true, 0 for false
     );
   `);
@@ -57,17 +58,29 @@ export async function seedFoods() {
     await db.runAsync(
       `
       INSERT INTO foods
-      (id, name, image, calories, protein, carbs, fat, isFavorite)
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?) -- Placeholders for values, and add data in order
+      (id, name, category, calories, protein, carbs, fat, image, isFavorite)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
       `,
       food.id,
       food.name,
-      food.image,
+      food.category,
       food.calories,
       food.protein,
       food.carbs,
       food.fat,
+      food.image,
       0
     );
   }
+}
+
+// Show all foods
+export async function getFoods() {
+  const db = await getDatabase();
+
+  const foods = await db.getAllAsync(
+    "SELECT * FROM foods ORDER BY id"
+  );
+
+  return foods;
 }

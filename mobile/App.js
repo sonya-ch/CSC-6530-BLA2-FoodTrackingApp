@@ -1,7 +1,6 @@
-//Navigation bar <Home> <Favorites>
-
 import { useState } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
+
 
 // --- Props ---
 import Home from "./Home"; //props Home
@@ -10,7 +9,12 @@ import FoodDetail from "./FoodDetail"; //Food Detail
 import AddFood from "./AddFood";
 
 // --- Data --- 
-import foodData from "../data/food";
+//import foodData from "../data/food";
+
+// --- Database Initialization ---  
+import { useEffect } from 'react';
+import { initDatabase, seedFoods , getFoods } from '../database/database';
+
 
 // --- Style ---
 import myStyle from "../assets/styles/myStyle.js";
@@ -75,7 +79,7 @@ export default function App() {
   };
 
 
-  // EDIT and UPDATE
+  //--- EDIT and UPDATE ---
   const openEditFood = (food) => {
     setSelectedFood(food);
     setScreen("edit");
@@ -98,6 +102,30 @@ export default function App() {
     setSelectedFood(updatedFood);
     setScreen("detail");
   };
+
+
+
+  // ----- Database Setup -------
+  useEffect(() => {
+    async function setupDatabase() {
+      try {
+        await initDatabase(); // Initialize the database
+        await seedFoods(); // Seed the database with initial data
+
+        const foods = await getFoods();
+        setFoods(foods); // Update the foods state with data from the database
+
+      console.log("Database ready!");
+      console.log("Foods from SQLite:", foods);
+
+      } catch (error) {
+        console.error("Database setup error:", error);
+      }
+    }
+    setupDatabase();
+  }, []); 
+  //[] = empty dependency array, 
+  // so this effect runs only once after the initial render
 
   return (
     <View style={{ flex: 1 }}>
