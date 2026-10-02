@@ -50,13 +50,24 @@ For BLA 2, I plan to expand the Food Menu concept into a Food Tracking App.
 - Category selection
 - FlatList 
 
-## Technologies
+---
+
+## Stack Technologies
+### Front-End
+- Figma
+- CSS
+- Canvas
+### Back-End
+- JavaScript
 - React Native
 - TypeScript
 - Android Emulator
 - Expo Go 
+### Database
 - SQLite
  
+ ---
+
 ## How to Run
 - npm install (Install Packages)
 - npm start (Start Expo)
