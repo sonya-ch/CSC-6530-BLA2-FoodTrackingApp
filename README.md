@@ -4,7 +4,7 @@
 # Instructor: Dr Victor Govindaswamy
 # Start Date: 9/29/2026
 
-## BLA 2 Plan – CRUD and Local Data
+## BLA 2 Plan – CRUD, Persistence, and Local Data
 For BLA 2, I plan to expand the Food Menu concept into a Food Tracking App.
 
 ### The application will introduce CRUD functionality, including:
@@ -86,7 +86,7 @@ For BLA 2, I plan to expand the Food Menu concept into a Food Tracking App.
 
 # Future Plans
   
-## BLA 3 – API and AI
+## BLA 3 – API, PostgreSQL, and AI
 
 For BLA 3, I plan to further develop the Food Tracking App into a ByteBurn application by integrating an external API and AI functionality.
 
