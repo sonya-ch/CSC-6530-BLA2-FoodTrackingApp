@@ -13,8 +13,12 @@ import AddFood from "./AddFood";
 
 // --- SQLite Database Initialization ---  
 import { useEffect } from 'react';
-import { initDatabase, seedFoods , getFoods } from '../database/database';
-
+import {
+  initDatabase,
+  seedFoods,
+  getFoods,
+  addFood as addFoodToDatabase //Change name for foodhandler
+} from "../database/database";
 
 // --- Style ---
 import myStyle from "../assets/styles/myStyle.js";
@@ -25,7 +29,7 @@ export default function App() {
   //state Current screen, innitialize to "home"
   const [screen, setScreen] = useState("home");
   
-  // Food data 
+  //---- Food data -----
  // const [foods, setFoods] = useState(foodData);
   const [foods, setFoods] = useState([]); //SQLite
 
@@ -57,12 +61,27 @@ export default function App() {
     setScreen("add");
   };
 
-  // CREATE - Add New Food
+  // CREATE - Add New Food BLA2
+  /*
   const addFood = (newFood) => {
     console.log("ADDING FOOD TO APP:", newFood);
     setFoods((prevFoods) => [...prevFoods, newFood]);
     setScreen("home");
-  };
+  };*/
+
+  // CREATE - Add New Food
+  const handleAddFood = async (newFood) => {
+    try {
+      console.log("ADDING FOOD TO DATABASE:", newFood);
+
+      await addFoodToDatabase(newFood);
+      await loadFoods();
+
+      setScreen("home");
+    } catch (error) {
+      console.error("Error adding food:", error);
+    }
+};
 
   // DELETE - Delete food
   const deleteFood = (foodId) => {
@@ -107,27 +126,38 @@ export default function App() {
 
 
   // ----- Database Setup -------
-  useEffect(() => {
-    async function setupDatabase() {
-      try {
-        await initDatabase(); // Initialize the database
-        await seedFoods(); // Seed the database with initial data
-
-        const foods = await getFoods();
-        setFoods(foods); // Update the foods state with data from the database
+useEffect(() => {
+  async function setupDatabase() {
+    try {
+      await initDatabase(); // Initialize the database
+      await seedFoods();    // Seed the database with initial data
+      await loadFoods();    // Load foods from SQLite
 
       console.log("Database ready!");
-      console.log("Foods from SQLite:", foods);
 
-      } catch (error) {
-        console.error("Database setup error:", error);
-      }
+    } catch (error) {
+      console.error("Database setup error:", error);
     }
-    setupDatabase();
-  }, []); 
+  }
+
+  setupDatabase();
+}, []);
   //[] = empty dependency array, 
   // so this effect runs only once after the initial render
 
+
+const loadFoods = async () => {
+  try {
+    const data = await getFoods();
+    setFoods(data);
+
+    console.log("Foods from SQLite:", data);
+  } catch (error) {
+    console.error("Error loading foods:", error);
+  }
+};
+
+  // ------- UI Rendering -------
   return (
     <View style={{ flex: 1 }}>
 
@@ -158,7 +188,7 @@ export default function App() {
 
       ) : screen === "add" ? (
         <AddFood 
-          onAddFood={addFood} 
+          onAddFood={handleAddFood} 
           onBack={goBackHome} 
         />
 

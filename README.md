@@ -84,6 +84,26 @@ For BLA 2, I plan to expand the Food Menu concept into a Food Tracking App.
 
 ---
 
+# Flow Database
+## Save Food
+  Save
+   ↓
+handleAddFood(food)
+   ↓
+addFood(food)
+   ↓
+SQLite INSERT
+   ↓
+loadFoods()
+   ↓
+getFoods()
+   ↓
+setFoods()
+   ↓
+ Home
+
+---
+
 # Future Plans
   
 ## BLA 3 – API, PostgreSQL, and AI

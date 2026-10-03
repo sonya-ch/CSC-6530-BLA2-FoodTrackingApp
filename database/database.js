@@ -24,7 +24,7 @@ export async function initDatabase() {
 
   await db.execAsync(`
     CREATE TABLE IF NOT EXISTS foods (
-      id INTEGER PRIMARY KEY NOT NULL,
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
       name TEXT NOT NULL,
       category TEXT NOT NULL,
       calories INTEGER,
@@ -36,7 +36,6 @@ export async function initDatabase() {
     );
   `);
 }
-
 
 // Seeding data into the foods table
 export async function seedFoods() {
@@ -84,3 +83,38 @@ export async function getFoods() {
 
   return foods;
 }
+
+// Add a new food item
+export async function addFood(food) {
+  const db = await getDatabase();
+
+  const result = await db.runAsync(
+    `
+    INSERT INTO foods
+    (name, category, calories, protein, carbs, fat, image, isFavorite)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    `,
+    food.name,
+    food.category,
+    food.calories,
+    food.protein,
+    food.carbs,
+    food.fat,
+    food.image,
+    0
+  );
+
+  return result.lastInsertRowId;
+}
+
+export async function resetDatabase() {
+  const db = await getDatabase();
+
+  await db.execAsync(`
+    DROP TABLE IF EXISTS foods;
+  `);
+
+  await initDatabase();
+  await seedFoods();
+}
+
