@@ -2,12 +2,12 @@
 erDiagram
     FOODS {
         int id PK
-        int calories
         string name
         string image
+        string category
         int calories
-        int protein
-        int carbs
-        int fat
+        real protein
+        real carbs
+        real fat
         int isFavorite
     }
