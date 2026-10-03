@@ -19,7 +19,7 @@ import {
   getFoods,
   addFood as addFoodToDatabase, //Add - Change name for foodhandler
   updateFood as updateFoodInDatabase, // Edit
-  deleteFood as deleteFoodFromDatabas // Delete
+  deleteFood as deleteFoodFromDatabase // Delete
 
 } from "../database/database";
 

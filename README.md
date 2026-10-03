@@ -135,6 +135,18 @@ setFoods()
    ↓
 Home
 ---
+## Favorite Food Flow
+Click ❤️
+   ↓
+SQLite UPDATE isFavorite
+   ↓
+loadFoods()
+   ↓
+ Reload
+   ↓
+ Favorite Still Show
+
+ ---
 
 # Future Plans
   
