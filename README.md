@@ -117,10 +117,24 @@ SQLite UPDATE
    ↓
 loadFoods()
    ↓
-กลับไป FoodDetail
+Back to FoodDetail
 
 ---
-
+## Delete Food Flow
+Click Delete
+   ↓
+deleteFood(foodId)
+   ↓
+deleteFoodFromDatabase(foodId)
+   ↓
+SQLite DELETE
+   ↓
+loadFoods()
+   ↓
+setFoods()
+   ↓
+Home
+---
 
 # Future Plans
   

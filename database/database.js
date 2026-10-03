@@ -137,6 +137,20 @@ export async function updateFood(food) {
   );
 }
 
+
+// ---------- DELETE FOOD -------------
+export async function deleteFood(foodId) {
+  const db = await getDatabase();
+
+  await db.runAsync(
+    "DELETE FROM foods WHERE id = ?",
+    foodId
+  );
+}
+
+
+
+// --------- RESET -----------
 export async function resetDatabase() {
   const db = await getDatabase();
 

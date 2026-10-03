@@ -17,8 +17,9 @@ import {
   initDatabase,
   seedFoods,
   getFoods,
-  addFood as addFoodToDatabase, //Change name for foodhandler
-  updateFood as updateFoodInDatabase,
+  addFood as addFoodToDatabase, //Add - Change name for foodhandler
+  updateFood as updateFoodInDatabase, // Edit
+  deleteFood as deleteFoodFromDatabas // Delete
 
 } from "../database/database";
 
@@ -85,7 +86,9 @@ export default function App() {
     }
 };
 
-  // DELETE - Delete food
+
+  //--- DELETE - Delete food ---
+  /* ----- OLD ------------
   const deleteFood = (foodId) => {
     setFoods((prevFoods) =>
       prevFoods.filter((food) => food.id !== foodId) 
@@ -99,6 +102,22 @@ export default function App() {
     setSelectedFood(null);
     setScreen("home");
   };
+  */ // -------- NEW DELETE ---------
+const deleteFood = async (foodId) => {
+  try {
+    console.log("DELETING FOOD FROM DATABASE:", foodId);
+
+    await deleteFoodFromDatabase(foodId);
+
+    await loadFoods();
+
+    setSelectedFood(null);
+    setScreen("home");
+  } catch (error) {
+    console.error("Error deleting food:", error);
+  }
+};
+
 
 
   //--- EDIT and UPDATE ---
