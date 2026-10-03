@@ -84,7 +84,7 @@ export async function getFoods() {
   return foods;
 }
 
-// Add a new food item
+// ---- Add a new food item -----
 export async function addFood(food) {
   const db = await getDatabase();
 
@@ -105,6 +105,36 @@ export async function addFood(food) {
   );
 
   return result.lastInsertRowId;
+}
+
+
+// ---- UPDATE - Edit Food ----
+// UPDATE WHERE id == id
+export async function updateFood(food) {
+  const db = await getDatabase();
+
+  await db.runAsync(
+    `
+    UPDATE foods
+    SET
+      name = ?,
+      category = ?,
+      calories = ?,
+      protein = ?,
+      carbs = ?,
+      fat = ?,
+      image = ?
+    WHERE id = ?
+    `,
+    food.name,
+    food.category,
+    food.calories,
+    food.protein,
+    food.carbs,
+    food.fat,
+    food.image,
+    food.id
+  );
 }
 
 export async function resetDatabase() {

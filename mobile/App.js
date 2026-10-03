@@ -17,7 +17,9 @@ import {
   initDatabase,
   seedFoods,
   getFoods,
-  addFood as addFoodToDatabase //Change name for foodhandler
+  addFood as addFoodToDatabase, //Change name for foodhandler
+  updateFood as updateFoodInDatabase,
+
 } from "../database/database";
 
 // --- Style ---
@@ -100,27 +102,35 @@ export default function App() {
 
 
   //--- EDIT and UPDATE ---
+  /* --- OLD ---
+    const updateFood = (updatedFood) => {
+      setFoods((prevFoods) =>
+        prevFoods.map((food) =>
+          food.id === updatedFood.id ? updatedFood : food
+        )
+      );
+  */
+
+  // --- NEW ---
+  //--- EDIT and UPDATE ---
   const openEditFood = (food) => {
     setSelectedFood(food);
     setScreen("edit");
   };
 
-  const updateFood = (updatedFood) => {
-    setFoods((prevFoods) =>
-      prevFoods.map((food) =>
-        food.id === updatedFood.id ? updatedFood : food
-      )
-    );
+  const updateFood = async (updatedFood) => {
+    try {
+      console.log("UPDATING FOOD IN DATABASE:", updatedFood);
 
-    // Update favorite item too, if this food is a favorite
-    setFavorites((prevFavorites) =>
-      prevFavorites.map((food) =>
-        food.id === updatedFood.id ? updatedFood : food
-      )
-    );
+      await updateFoodInDatabase(updatedFood);
 
-    setSelectedFood(updatedFood);
-    setScreen("detail");
+      await loadFoods();
+
+      setSelectedFood(updatedFood);
+      setScreen("detail");
+    } catch (error) {
+      console.error("Error updating food:", error);
+    }
   };
 
 

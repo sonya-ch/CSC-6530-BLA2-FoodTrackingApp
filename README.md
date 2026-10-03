@@ -105,6 +105,21 @@ setFoods()
 
 ---
 ## Edit Food Flow
+AddFood
+   ↓
+onUpdateFood()
+   ↓
+App.js updateFood()
+   ↓
+database.js updateFood()
+   ↓
+SQLite UPDATE
+   ↓
+loadFoods()
+   ↓
+กลับไป FoodDetail
+
+---
 
 
 # Future Plans
