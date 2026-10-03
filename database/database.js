@@ -149,6 +149,22 @@ export async function deleteFood(foodId) {
 }
 
 
+// ----- UPDATE - Favorite Status -------
+export async function updateFavorite(foodId, isFavorite) {
+  const db = await getDatabase();
+
+  await db.runAsync(
+    `
+    UPDATE foods
+    SET isFavorite = ?
+    WHERE id = ?
+    `,
+    isFavorite ? 1 : 0, // 1 = Fav, 0 = Not Fav
+    foodId
+  );
+}
+
+
 
 // --------- RESET -----------
 export async function resetDatabase() {

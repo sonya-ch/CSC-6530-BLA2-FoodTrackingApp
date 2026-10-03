@@ -138,6 +138,10 @@ Home
 ## Favorite Food Flow
 Click ❤️
    ↓
+toggleFavorite(item)
+   ↓
+App.js
+   ↓
 SQLite UPDATE isFavorite
    ↓
 loadFoods()

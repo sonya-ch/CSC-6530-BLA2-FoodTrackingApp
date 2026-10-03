@@ -19,8 +19,8 @@ import {
   getFoods,
   addFood as addFoodToDatabase, //Add - Change name for foodhandler
   updateFood as updateFoodInDatabase, // Edit
-  deleteFood as deleteFoodFromDatabase // Delete
-
+  deleteFood as deleteFoodFromDatabase,// Delete
+  updateFavorite
 } from "../database/database";
 
 // --- Style ---
@@ -152,7 +152,18 @@ const deleteFood = async (foodId) => {
     }
   };
 
+   // ------- Favorite ---------
+  const toggleFavorite = async (food) => {
+    try {
+      const newFavoriteStatus = food.isFavorite ? 0 : 1;
 
+      await updateFavorite(food.id, newFavoriteStatus);
+
+      await loadFoods();
+    } catch (error) {
+      console.error("Error updating favorite:", error);
+    }
+  };
 
   // ----- Database Setup -------
 useEffect(() => {
@@ -174,17 +185,25 @@ useEffect(() => {
   //[] = empty dependency array, 
   // so this effect runs only once after the initial render
 
+ // ------ NEW Reload Food after Favorites
+  const loadFoods = async () => {
+    try {
+      const data = await getFoods();
 
-const loadFoods = async () => {
-  try {
-    const data = await getFoods();
-    setFoods(data);
+      setFoods(data);
 
-    console.log("Foods from SQLite:", data);
-  } catch (error) {
-    console.error("Error loading foods:", error);
-  }
-};
+      const favoriteFoods = data.filter(
+        (food) => food.isFavorite === 1
+      );
+
+      setFavorites(favoriteFoods);
+
+      console.log("Foods from SQLite:", data);
+      console.log("Favorites from SQLite:", favoriteFoods);
+    } catch (error) {
+      console.error("Error loading foods:", error);
+    }
+  };
 
   // ------- UI Rendering -------
   return (
@@ -198,6 +217,7 @@ const loadFoods = async () => {
           setFavorites={setFavorites}
           openFoodDetail={openFoodDetail}
           openAddFood={openAddFood}
+          toggleFavorite={toggleFavorite}
         />
 
       ) : screen === "favorites" ? (

@@ -12,7 +12,14 @@ import {
 import myStyle from "../assets/styles/myStyle";
 
 //props favorites, setFavorites, onFoodPress
-export default function Home({ foods, favorites, setFavorites, openFoodDetail, openAddFood }) {
+export default function Home({ 
+  foods, 
+  favorites, 
+  setFavorites, 
+  openFoodDetail, 
+  openAddFood,
+  toggleFavorite 
+}) {
   //state search = waiting for search input.
   // -- useState is a React hook that allows you to have state variables in functional components
   const [search, setSearch] = useState("");
@@ -20,18 +27,6 @@ export default function Home({ foods, favorites, setFavorites, openFoodDetail, o
   //state category = selected food category
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  //Toggle favorite status (Add/Remove)
-  // - food = parameter containing the food item selected from user
-  // - item = parameter representing each item from the favorites array
-  const toggleFavorite = (food) => {
-    const alreadyFavorite = favorites.some((item) => item.id === food.id);
-
-    if (alreadyFavorite) {
-      setFavorites(favorites.filter((item) => item.id !== food.id));
-    } else {
-      setFavorites([...favorites, food]);
-    }
-  };
 
   //Filter food based on category AND search query
   const filteredFood = foods.filter((food) => {
