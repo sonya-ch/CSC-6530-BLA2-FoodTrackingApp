@@ -67,14 +67,15 @@ For BLA 2, I plan to expand the Food Menu concept into a Food Tracking App.
 - SQLite
  
  ---
-
-## How to Run
+ 
+ ## How to Run
 - npm install (Install Packages)
 - npm start (Start Expo)
 - npx expo start -c (Start Expo and clear cache)
 - npx expo install expo-sqlite (Install Expo SQLite)
-
-
+  
+---
+ 
 ## Database Flow
  - [DatabaseFlow](./docs/design/DatabaseFlow.md)  
 
