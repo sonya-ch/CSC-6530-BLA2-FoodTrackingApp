@@ -152,6 +152,17 @@ loadFoods()
 
  ---
 
+## Delete Food
+💔 Remove Favorite
+       ↓
+SQLite isFavorite = 0
+       ↓
+favorites state
+       ↓
+Favorites page
+
+---
+
 # Future Plans
   
 ## BLA 3 – API, PostgreSQL, and AI

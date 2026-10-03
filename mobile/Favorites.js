@@ -8,13 +8,22 @@ import {
 
 import myStyle from "../assets/styles/myStyle";
 
-export default function Favorites({favorites, setFavorites, openFoodDetail}) 
-{
+// Delete Favorite
+import { updateFavorite } from "../database/database";
+
+export default function Favorites({favorites, setFavorites, openFoodDetail}) {
+ 
   //Remove function
-  const removeFavorite = (id) => {
-    setFavorites(
-      favorites.filter((food) => food.id !== id) //if id = item.id > not show
-    );
+  const removeFavorite = async (id) => {
+    try {
+      await updateFavorite(id, 0);
+
+      setFavorites(
+        favorites.filter((food) => food.id !== id)
+      );
+    } catch (error) {
+      console.error("Error removing favorite:", error);
+    }
   };
 
   //Calculate total calories
