@@ -72,8 +72,21 @@ For BLA 2, I plan to expand the Food Menu concept into a Food Tracking App.
 - npm install (Install Packages)
 - npm start (Start Expo)
 - npx expo start -c (Start Expo and clear cache)
+- npx expo install expo-sqlite (Install Expo SQLite)
 
-### What I Have Learned? (Challenges) 
+
+## Database Flow
+ - [DatabaseFlow](./docs/design/DatabaseFlow.md)  
+
+---
+
+## What I Have Learned? (Challenges) 
+
+BLA2 helped me understand how a mobile application works beyond the user interface. I learned how the UI, application logic, state management, and database work together to create a functional application.
+
+I also learned that organizing database operations separately from the UI can make the application easier to maintain and extend in future development.
+
+---
 
 ## YouTube Links
 
@@ -84,84 +97,6 @@ For BLA 2, I plan to expand the Food Menu concept into a Food Tracking App.
 
 ---
 
-# Flow Database
-
-## Save Food
-  Save
-   ↓
-handleAddFood(food)
-   ↓
-addFood(food)
-   ↓
-SQLite INSERT
-   ↓
-loadFoods()
-   ↓
-getFoods()
-   ↓
-setFoods()
-   ↓
- Home
-
----
-## Edit Food Flow
-AddFood
-   ↓
-onUpdateFood()
-   ↓
-App.js updateFood()
-   ↓
-database.js updateFood()
-   ↓
-SQLite UPDATE
-   ↓
-loadFoods()
-   ↓
-Back to FoodDetail
-
----
-## Delete Food Flow
-Click Delete
-   ↓
-deleteFood(foodId)
-   ↓
-deleteFoodFromDatabase(foodId)
-   ↓
-SQLite DELETE
-   ↓
-loadFoods()
-   ↓
-setFoods()
-   ↓
-Home
----
-## Favorite Food Flow
-Click ❤️
-   ↓
-toggleFavorite(item)
-   ↓
-App.js
-   ↓
-SQLite UPDATE isFavorite
-   ↓
-loadFoods()
-   ↓
- Reload
-   ↓
- Favorite Still Show
-
- ---
-
-## Delete Food
-💔 Remove Favorite
-       ↓
-SQLite isFavorite = 0
-       ↓
-favorites state
-       ↓
-Favorites page
-
----
 
 # Future Plans
   
