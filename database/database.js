@@ -1,6 +1,6 @@
 import * as SQLite from 'expo-sqlite';
 
-import {foodData} from '../data/food.js'
+import foodData from '../data/food.js'
 
 let db;
 

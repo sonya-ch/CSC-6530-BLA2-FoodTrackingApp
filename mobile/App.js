@@ -8,10 +8,10 @@ import Favorites from "./Favorites";
 import FoodDetail from "./FoodDetail"; //Food Detail
 import AddFood from "./AddFood";
 
-// --- Data --- 
+// --- Old Data --- 
 //import foodData from "../data/food";
 
-// --- Database Initialization ---  
+// --- SQLite Database Initialization ---  
 import { useEffect } from 'react';
 import { initDatabase, seedFoods , getFoods } from '../database/database';
 
@@ -26,7 +26,8 @@ export default function App() {
   const [screen, setScreen] = useState("home");
   
   // Food data 
-  const [foods, setFoods] = useState(foodData);
+ // const [foods, setFoods] = useState(foodData);
+  const [foods, setFoods] = useState([]); //SQLite
 
   //Empty array for favorites food
   const [favorites, setFavorites] = useState([]);
