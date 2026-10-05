@@ -64,13 +64,6 @@ export default function App() {
     setScreen("add");
   };
 
-  // CREATE - Add New Food BLA2
-  /*
-  const addFood = (newFood) => {
-    console.log("ADDING FOOD TO APP:", newFood);
-    setFoods((prevFoods) => [...prevFoods, newFood]);
-    setScreen("home");
-  };*/
 
   // CREATE - Add New Food
   const handleAddFood = async (newFood) => {
@@ -88,21 +81,6 @@ export default function App() {
 
 
   //--- DELETE - Delete food ---
-  /* ----- OLD ------------
-  const deleteFood = (foodId) => {
-    setFoods((prevFoods) =>
-      prevFoods.filter((food) => food.id !== foodId) 
-    //Keep all foods except the one with the matching ID
-    );
-
-    // Also remove the deleted food from Favorites 
-    setFavorites((prevFavorites) => 
-      prevFavorites.filter((food) => food.id !== foodId) );
-    
-    setSelectedFood(null);
-    setScreen("home");
-  };
-  */ // -------- NEW DELETE ---------
 const deleteFood = async (foodId) => {
   try {
     console.log("DELETING FOOD FROM DATABASE:", foodId);
@@ -120,17 +98,6 @@ const deleteFood = async (foodId) => {
 
 
 
-  //--- EDIT and UPDATE ---
-  /* --- OLD ---
-    const updateFood = (updatedFood) => {
-      setFoods((prevFoods) =>
-        prevFoods.map((food) =>
-          food.id === updatedFood.id ? updatedFood : food
-        )
-      );
-  */
-
-  // --- NEW ---
   //--- EDIT and UPDATE ---
   const openEditFood = (food) => {
     setSelectedFood(food);
@@ -185,6 +152,7 @@ useEffect(() => {
   //[] = empty dependency array, 
   // so this effect runs only once after the initial render
 
+  
  // ------ NEW Reload Food after Favorites
   const loadFoods = async () => {
     try {

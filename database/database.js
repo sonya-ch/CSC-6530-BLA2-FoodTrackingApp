@@ -16,7 +16,6 @@ export async function getDatabase() {
   return db;
 }
 
-
 // Initialize the database and create the foods table, if it doesn't exist
 export async function initDatabase() {
 
@@ -52,6 +51,7 @@ export async function seedFoods() {
   if (result.count > 0) {
     return;
   }
+
   // Seed the foods table with initial data
   for (const food of foodData) {
     await db.runAsync(
