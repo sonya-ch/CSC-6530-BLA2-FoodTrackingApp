@@ -73,7 +73,7 @@ export async function seedFoods() {
   }
 }
 
-// Show all foods
+// --- READ ---- Show all foods
 export async function getFoods() {
   const db = await getDatabase();
 
