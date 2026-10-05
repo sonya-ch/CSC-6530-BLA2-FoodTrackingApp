@@ -90,8 +90,16 @@ I also learned that organizing database operations separately from the UI can ma
 ---
 
 ## YouTube Links
+https://youtu.be/3sEZsL94INs
+https://youtu.be/AYzrZTkDeLc
+https://youtu.be/ouihfc1OEXg
 
 ## LinkedIn Posts
+https://www.linkedin.com/feed/update/urn:li:activity:7513009305218981888/
+https://www.linkedin.com/feed/update/urn:li:share:7513010199029350401/
+https://www.linkedin.com/feed/update/urn:li:share:7513010901407592448/
+
+---
 
 ## Screenshots
  - [Screenshots](./docs/screenshots/)  
